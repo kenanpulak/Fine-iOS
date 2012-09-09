@@ -106,10 +106,8 @@
         image = [UIImage imageNamed:product.imageName];
     }
     else{
-        
         restaurantName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"place"];
         foodName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"foodName"];
-        NSNumber *priceNum = [[NSNumber alloc] initWithInt:(arc4random_uniform(7)+5)];
         NSNumber *likesNum = [[NSNumber alloc] initWithInt:(arc4random_uniform(400)+30)];
         price = [priceNum stringValue];
         numLikes = [[likesNum stringValue]stringByAppendingString:@" Likes"];
@@ -203,14 +201,21 @@
         
         NSString *place = [[restaurant objectForKey:@"venue"] objectForKey:@"name"];
         NSString *foodName = [restaurant objectForKey:@"name"];
+        NSNumber *foodPrice = [restaurant objectForKey:@"price"];
+        if(foodPrice == [NSNull null]){
+            foodPrice = [NSNumber numberWithFloat:5.95];
+        }
+        
         
         NSLog(@"name:%@",foodName);
         NSLog(@"place:%@",place);
+        NSLog(@"foodPrice:%@",[foodPrice stringValue]);
         
         NSMutableDictionary *realFoodItem = [[NSMutableDictionary alloc] init];
         
         [realFoodItem setObject:foodName forKey:@"foodName"];
         [realFoodItem setObject:place forKey:@"place"];
+        [realFoodItem setObject:[foodPrice stringValue] forKey:@"foodPrice"];
         
         [realDataArray addObject:realFoodItem];
     }
