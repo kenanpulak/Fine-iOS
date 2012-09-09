@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServerRequest.h"
 #import "Product.h"
 
-@interface SearchItemTableViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>{
+@interface SearchItemTableViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate,ServerRequestDelegate>{
     
     NSArray			*listContent;			// The main content of app
 	NSMutableArray	*filteredListContent;	// The content filtered as a result of a search
@@ -18,6 +19,8 @@
     NSString		*savedSearchTerm;
     NSInteger		savedScopeButtonIndex;
     BOOL			searchWasActive;
+    
+    ServerRequest *searchFood;
     
     
 }

@@ -27,7 +27,7 @@
     self.navigationController.navigationBar.topItem.title = @"Barto";
     
     self.view.backgroundColor = BARTO_PINK_COLOR;
-        
+    
     listContent = [[NSArray alloc] initWithObjects:
                    [Product productWithType:@"Salad" name:@"Chicken Caesar Salad" imageName:@"test" restaurantName:@"Cenan's Bakery" price:@"5.99" numLikes:@"22 Likes"],
                    [Product productWithType:@"Burger" name:@"Cheese Burger" imageName:@"test" restaurantName:@"Five Guys" price:@"6.50" numLikes:@"32 Likes"],
@@ -38,7 +38,7 @@
                    [Product productWithType:@"Taco" name:@"Doritos Loco Taco" imageName:@"test" restaurantName:@"Taco Bell" price:@"5.20" numLikes:@"82 Likes"],
                    [Product productWithType:@"Pasta" name:@"Spaghetti w/ Vodka Sauce" imageName:@"test" restaurantName:@"Olive Garden" price:@"3.40" numLikes:@"33 Likes"],
                    [Product productWithType:@"Bread" name:@"French Baguette" imageName:@"test" restaurantName:@"Baker's Place" price:@"2.00" numLikes:@"71 Likes"], nil];
-
+    
     // create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];
 	
@@ -54,6 +54,8 @@
 	
 	[self.tableView reloadData];
 	self.tableView.scrollEnabled = YES;
+    
+    self.searchBar.delegate = self;
     
 }
 
@@ -128,7 +130,7 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{    
+{
 	/*
 	 If the requesting table view is the search display controller's table view, configure the next view controller using the filtered content, otherwise use the main list.
 	 */
@@ -141,64 +143,69 @@
 	{
         product = [self.listContent objectAtIndex:indexPath.row];
     }
-
+    
     self.selectedProduct = product;
     
     
     
-   // [[self navigationController] pushViewController:detailsViewController animated:YES];
+    // [[self navigationController] pushViewController:detailsViewController animated:YES];
 }
 
 
 #pragma mark -
 #pragma mark Content Filtering
-
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
-{
-	/*
-	 Update the filtered array based on the search text and scope.
-	 */
-	
-	[self.filteredListContent removeAllObjects]; // First clear the filtered array.
-	
-	/*
-	 Search the main list for products whose type matches the scope (if selected) and whose name matches searchText; add items that match to the filtered array.
-	 */
-	for (Product *product in listContent)
-	{
-		if ([scope isEqualToString:@"All"] || [product.type isEqualToString:scope])
-		{
-			NSComparisonResult result = [product.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
-            if (result == NSOrderedSame)
-			{
-				[self.filteredListContent addObject:product];
-            }
-		}
-	}
-}
-
-
-#pragma mark -
-#pragma mark UISearchDisplayController Delegate Methods
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self filterContentForSearchText:searchString scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
-    
-    // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
-
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
-{
-    [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
-     [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
-    
-    // Return YES to cause the search result table view to be reloaded.
-    return YES;
-}
+/*
+ - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+ {
+ 
+ 
+ [self.filteredListContent removeAllObjects]; // First clear the filtered array.
+ 
+ for (Product *product in listContent)
+ {
+ if ([scope isEqualToString:@"All"] || [product.type isEqualToString:scope])
+ {
+ NSComparisonResult result = [product.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+ if (result == NSOrderedSame)
+ {
+ [self.filteredListContent addObject:product];
+ }
+ }
+ }
+ }
+ 
+ #pragma mark UISearchDisplayController Delegate Methods
+ 
+ - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+ {
+ 
+ if ([searchString isEqualToString:@"\n"] ) {
+ 
+ NSLog(@"searchString %@",searchString);
+ 
+ }
+ NSLog(@"searchString %@",searchString);
+ 
+ 
+ [self filterContentForSearchText:searchString scope:
+ [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+ 
+ // Return YES to cause the search result table view to be reloaded.
+ 
+ return YES;
+ }
+ 
+ 
+ - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+ {
+ 
+ [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
+ [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
+ 
+ // Return YES to cause the search result table view to be reloaded.
+ return YES;
+ }
+ */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -211,7 +218,7 @@
         detailViewController *detailsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"detail"];
         
         
-       // NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+        // NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
         detailsViewController = [segue destinationViewController];
         
         detailsViewController.title = self.selectedProduct.name;
@@ -220,6 +227,37 @@
         detailsViewController.price.text = self.selectedProduct.price;
         detailsViewController.numLikes.text = self.selectedProduct.numLikes;
         
+    }
+}
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    
+    NSString *searchString = self.searchBar.text;
+    
+    searchFood = [[ServerRequest alloc] initWithDelegate:self];
+    searchFood.identifier = @"searchForFood";
+    searchFood.urlName = [[@"http://api.locu.com/v1_0/menu_item/search/?api_key=2e33fbeb9ba685f9a60913076b95ee924608cdd8&location=37.771666,-122.403488"                        stringByAppendingString:@"&name="]
+                          stringByAppendingString:searchString];
+    searchFood.requestType = @"GET";
+    searchFood.username = @"";
+    searchFood.parameters = @"";
+    searchFood.password = @"";
+    
+    [searchFood sendRequest];
+}
+
+-(void)requestDidFinishLoading{
+    
+    NSArray *restaurantsInfo = [searchFood.json objectForKey:@"objects"];
+    NSDictionary *restaurant;
+    
+    for(restaurant in restaurantsInfo){
+        
+        NSString *place = [[restaurant objectForKey:@"venue"] objectForKey:@"name"];
+        NSString *foodName = [restaurant objectForKey:@"name"];
+        
+        NSLog(@"name:%@",foodName);
+        NSLog(@"place:%@",place);
     }
 }
 
