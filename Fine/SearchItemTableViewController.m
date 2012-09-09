@@ -123,7 +123,7 @@
     cell.price.text = product.price;
     cell.numberLikes.text = product.numLikes;
     cell.imageView.image = [UIImage imageNamed:product.imageName];
-    cell.contentView.backgroundColor = BARTO_CELL_COLOR;
+    cell.contentView.backgroundColor = [UIColor whiteColor];
     
 	return cell;
 }
