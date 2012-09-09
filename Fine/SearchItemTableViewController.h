@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
 
 @interface SearchItemTableViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate>{
     
@@ -24,6 +25,7 @@
 
 @property (nonatomic, retain) NSArray *listContent;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
+@property (nonatomic,strong) Product *selectedProduct;
 
 @property (nonatomic, copy) NSString *savedSearchTerm;
 @property (nonatomic) NSInteger savedScopeButtonIndex;

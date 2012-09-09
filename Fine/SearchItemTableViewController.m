@@ -9,11 +9,12 @@
 #import "SearchItemTableViewController.h"
 #import "Product.h"
 #import "SearchItemCell.h"
+#import "detailViewController.h"
 
 @implementation SearchItemTableViewController
 @synthesize searchBar;
 
-@synthesize listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive;
+@synthesize listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, selectedProduct;
 
 - (void)viewDidLoad
 {
@@ -113,6 +114,7 @@
 	{
         product = [self.listContent objectAtIndex:indexPath.row];
     }
+    
 	
 	cell.foodName.text = product.name;
     cell.restaurantName.text = product.restaurantName;
@@ -121,17 +123,12 @@
     cell.imageView.image = [UIImage imageNamed:product.imageName];
     cell.contentView.backgroundColor = BARTO_CELL_COLOR;
     
-    
-    
-    
 	return cell;
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UIViewController *detailsViewController = [[UIViewController alloc] init];
-    
+{    
 	/*
 	 If the requesting table view is the search display controller's table view, configure the next view controller using the filtered content, otherwise use the main list.
 	 */
@@ -144,9 +141,12 @@
 	{
         product = [self.listContent objectAtIndex:indexPath.row];
     }
-	detailsViewController.title = product.name;
+
+    self.selectedProduct = product;
     
-    [[self navigationController] pushViewController:detailsViewController animated:YES];
+    
+    
+   // [[self navigationController] pushViewController:detailsViewController animated:YES];
 }
 
 
@@ -198,6 +198,29 @@
     
     // Return YES to cause the search result table view to be reloaded.
     return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    /*
+     When a row is selected, the segue creates the detail view controller as the destination.
+     Set the detail view controller's detail item to the item associated with the selected row.
+     */
+    if ([[segue identifier] isEqualToString:@"toFoodDetail"]) {
+        
+        detailViewController *detailsViewController = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"detail"];
+        
+        
+       // NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
+        detailsViewController = [segue destinationViewController];
+        
+        detailsViewController.title = self.selectedProduct.name;
+        detailsViewController.restaurantName.text = self.selectedProduct.restaurantName;
+        detailsViewController.imageView.image = [UIImage imageNamed:self.selectedProduct.imageName];
+        detailsViewController.price.text = self.selectedProduct.price;
+        detailsViewController.numLikes.text = self.selectedProduct.numLikes;
+        
+    }
 }
 
 

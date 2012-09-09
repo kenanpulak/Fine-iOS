@@ -98,6 +98,7 @@
                                     <outlet property="numberLikes" destination="Jk1-gv-nsR" id="KKe-gW-EuO"/>
                                     <outlet property="price" destination="MLJ-sz-peO" id="i9u-wg-iIA"/>
                                     <outlet property="restaurantName" destination="q7o-bX-afu" id="zUm-RI-3mj"/>
+                                    <segue destination="WtK-Qc-2wd" kind="push" identifier="toFoodDetail" id="0Av-kS-h9e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -122,7 +123,76 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1161" y="-161"/>
+            <point key="canvasLocation" x="1175" y="-161"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="b4L-eA-gkh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZF-LM-g9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="detail" id="WtK-Qc-2wd" customClass="detailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YpY-6y-V4e">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tCc-a0-c7f">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="231"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Restaurant Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8T2-0q-fdS">
+                                <rect key="frame" x="20" y="268" width="138" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="gXY-Y8-D7F">
+                                <rect key="frame" x="20" y="297" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="5eJ-bT-a4g">
+                                <rect key="frame" x="20" y="326" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="This was amazing!!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="w1O-Ti-86F">
+                                <rect key="frame" x="20" y="239" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DOf-7H-zRI">
+                                <rect key="frame" x="166" y="268" width="134" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="pCw-c8-2FD">
+                                <rect key="frame" x="72" y="297" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eKZ-39-PWN"/>
+                    <connections>
+                        <outlet property="imageView" destination="tCc-a0-c7f" id="M8t-ao-9CI"/>
+                        <outlet property="numLikes" destination="5eJ-bT-a4g" id="zzf-bN-LP7"/>
+                        <outlet property="price" destination="pCw-c8-2FD" id="x8z-TY-ii9"/>
+                        <outlet property="restaurantName" destination="DOf-7H-zRI" id="h8d-16-0M8"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1585" y="-161"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="xEj-go-SjO">
@@ -288,6 +358,15 @@
                 <relationship kind="outlet" name="enterStatus" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="upButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="detailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/detailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="numLikes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
