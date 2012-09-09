@@ -113,7 +113,7 @@
         restaurantName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"place"];
         foodName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"foodName"];
         NSNumber *likesNum = [[NSNumber alloc] initWithInt:(arc4random_uniform(400)+30)];
-        price = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"price"];
+        price = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"foodPrice"];
         numLikes = [[likesNum stringValue]stringByAppendingString:@" Likes"];
         image = [UIImage imageNamed:[self.realImageData objectAtIndex:indexPath.row%15]];
         
