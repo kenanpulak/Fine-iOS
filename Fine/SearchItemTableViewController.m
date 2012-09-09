@@ -8,6 +8,7 @@
 
 #import "SearchItemTableViewController.h"
 #import "Product.h"
+#import "SearchItemCell.h"
 
 @implementation SearchItemTableViewController
 @synthesize searchBar;
@@ -18,22 +19,24 @@
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:242.0f/255.0f green:109.0f/255.0f blue:162.0f/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.tintColor = BARTO_PINK_COLOR;
     
-    self.searchBar.tintColor = [UIColor colorWithRed:242.0f/255.0f green:109.0f/255.0f blue:162.0f/255.0f alpha:1.0f];
+    self.searchBar.tintColor = BARTO_PINK_COLOR;
     
     self.navigationController.navigationBar.topItem.title = @"Barto";
+    
+    self.view.backgroundColor = BARTO_PINK_COLOR;
         
     listContent = [[NSArray alloc] initWithObjects:
-                   [Product productWithType:@"Salad" name:@"Chicken Caesar Salad"],
-                   [Product productWithType:@"Burger" name:@"Cheese Burger"],
-                   [Product productWithType:@"Pizza" name:@"Pepperoni Pizza"],
-                   [Product productWithType:@"Burrito" name:@"Super Burrito"],
-                   [Product productWithType:@"Calzone" name:@"Cheese Calzone"],
-                   [Product productWithType:@"Crepe" name:@"Nutella Crepe"],
-                   [Product productWithType:@"Taco" name:@"Doritos Loco Taco"],
-                   [Product productWithType:@"Pasta" name:@"Spaghetti w/ Vodka Sauce"],
-                   [Product productWithType:@"Bread" name:@"French Baguette"], nil];
+                   [Product productWithType:@"Salad" name:@"Chicken Caesar Salad" imageName:@"test" restaurantName:@"Cenan's Bakery" price:@"5.99" numLikes:@"22 Likes"],
+                   [Product productWithType:@"Burger" name:@"Cheese Burger" imageName:@"test" restaurantName:@"Five Guys" price:@"6.50" numLikes:@"32 Likes"],
+                   [Product productWithType:@"Pizza" name:@"Pepperoni Pizza" imageName:@"test" restaurantName:@"Extreme Pizza" price:@"12.99" numLikes:@"18 Likes"],
+                   [Product productWithType:@"Burrito" name:@"Super Burrito" imageName:@"test" restaurantName:@"Iron Cactus" price:@"6.80" numLikes:@"9 Likes"],
+                   [Product productWithType:@"Calzone" name:@"Cheese Calzone" imageName:@"test" restaurantName:@"Paizano's" price:@"6.29" numLikes:@"25 Likes"],
+                   [Product productWithType:@"Crepe" name:@"Nutella Crepe" imageName:@"test" restaurantName:@"Crepe Place" price:@"4.30" numLikes:@"52 Likes"],
+                   [Product productWithType:@"Taco" name:@"Doritos Loco Taco" imageName:@"test" restaurantName:@"Taco Bell" price:@"5.20" numLikes:@"82 Likes"],
+                   [Product productWithType:@"Pasta" name:@"Spaghetti w/ Vodka Sauce" imageName:@"test" restaurantName:@"Olive Garden" price:@"3.40" numLikes:@"33 Likes"],
+                   [Product productWithType:@"Bread" name:@"French Baguette" imageName:@"test" restaurantName:@"Baker's Place" price:@"2.00" numLikes:@"71 Likes"], nil];
 
     // create a filtered list that will contain products for the search results table.
 	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];
@@ -87,14 +90,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *kCellID = @"cellID";
+	//static NSString *kCellID = @"searchItemCell";
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellID];
+	SearchItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchItemCell"];
+    
 	if (cell == nil)
 	{
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellID];
+		cell = [[SearchItemCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"searchItemCell"];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
+    
 	
 	/*
 	 If the requesting table view is the search display controller's table view, configure the cell using the filtered content, otherwise use the main list.
@@ -109,7 +114,16 @@
         product = [self.listContent objectAtIndex:indexPath.row];
     }
 	
-	cell.textLabel.text = product.name;
+	cell.foodName.text = product.name;
+    cell.restaurantName.text = product.restaurantName;
+    cell.price.text = product.price;
+    cell.numberLikes.text = product.numLikes;
+    cell.imageView.image = [UIImage imageNamed:product.imageName];
+    cell.contentView.backgroundColor = BARTO_CELL_COLOR;
+    
+    
+    
+    
 	return cell;
 }
 

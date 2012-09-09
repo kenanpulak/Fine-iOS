@@ -18,7 +18,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="dGH-hS-TVb" kind="relationship" relationship="viewControllers" id="Stu-yx-TrX"/>
-                        <segue destination="Jzg-MY-Cgp" kind="relationship" relationship="viewControllers" id="xyq-pn-kzz"/>
+                        <segue destination="ilg-qF-n6e" kind="relationship" relationship="viewControllers" id="xyq-pn-kzz"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -29,7 +29,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClB-V3-9tQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="rmJ-Bh-Sa0" customClass="SearchItemTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AGG-PE-l4V">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="AGG-PE-l4V">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,14 +42,63 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Nsi-Dm-4kZ">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchItemCell" rowHeight="61" id="Nsi-Dm-4kZ" customClass="SearchItemCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="MJ3-2c-5jE">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name of Food" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AVI-mG-rPq">
+                                            <rect key="frame" x="68" y="7" width="182" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="AcA-Uo-UOQ">
+                                            <rect key="frame" x="258" y="7" width="14" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="MLJ-sz-peO">
+                                            <rect key="frame" x="269" y="7" width="46" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name of Restaurant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="q7o-bX-afu">
+                                            <rect key="frame" x="68" y="36" width="182" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Jk1-gv-nsR">
+                                            <rect key="frame" x="258" y="36" width="57" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="foodName" destination="AVI-mG-rPq" id="99v-0h-7gL"/>
+                                    <outlet property="imageView" destination="MJ3-2c-5jE" id="vIp-gO-ikn"/>
+                                    <outlet property="numberLikes" destination="Jk1-gv-nsR" id="KKe-gW-EuO"/>
+                                    <outlet property="price" destination="MLJ-sz-peO" id="i9u-wg-iIA"/>
+                                    <outlet property="restaurantName" destination="q7o-bX-afu" id="zUm-RI-3mj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -75,17 +124,17 @@
             </objects>
             <point key="canvasLocation" x="1161" y="-161"/>
         </scene>
-        <!--Second View Controller - Second-->
+        <!--Second View Controller-->
         <scene sceneID="xEj-go-SjO">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBA-6D-g4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Jzg-MY-Cgp" customClass="SecondViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1SA-Ao-hPR">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="YOl-0a-t5o">
-                                <rect key="frame" x="106" y="90" width="108" height="90"/>
+                                <rect key="frame" x="106" y="90" width="108" height="46"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y6K-fN-eNN">
@@ -104,7 +153,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Qb-2m-tZY">
-                                <rect key="frame" x="62" y="274" width="72" height="37"/>
+                                <rect key="frame" x="68" y="234" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Up">
@@ -119,7 +168,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pqe-FM-xGH">
-                                <rect key="frame" x="184" y="274" width="72" height="37"/>
+                                <rect key="frame" x="184" y="234" width="72" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Down">
@@ -134,7 +183,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DTU-yx-xxZ">
-                                <rect key="frame" x="20" y="344" width="280" height="47"/>
+                                <rect key="frame" x="20" y="300" width="280" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Done">
@@ -149,7 +198,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9s1-vu-gY0">
-                                <rect key="frame" x="40" y="201" width="240" height="56"/>
+                                <rect key="frame" x="40" y="156" width="240" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -161,7 +210,7 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" id="AYD-Hs-AJV"/>
+                    <navigationItem key="navigationItem" id="f8a-HR-9GK"/>
                     <connections>
                         <outlet property="downButton" destination="Pqe-FM-xGH" id="Bt9-UI-aN8"/>
                         <outlet property="enterStatus" destination="9s1-vu-gY0" id="K7X-3r-s8U"/>
@@ -170,7 +219,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="639" y="521"/>
+            <point key="canvasLocation" x="1165" y="521"/>
         </scene>
         <!--Navigation Controller - Search-->
         <scene sceneID="xBq-Bq-Ue0">
@@ -191,8 +240,37 @@
             </objects>
             <point key="canvasLocation" x="635" y="-161"/>
         </scene>
+        <!--Navigation Controller - Second-->
+        <scene sceneID="Qyb-Yo-goB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lkV-g0-ucs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="ilg-qF-n6e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Second" id="AYD-Hs-AJV"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MXn-oA-ney">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jzg-MY-Cgp" kind="relationship" relationship="rootViewController" id="7N3-SA-Ldc"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="639" y="521"/>
+        </scene>
     </scenes>
     <classes>
+        <class className="SearchItemCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="foodName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="numberLikes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="SearchItemTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemTableViewController.h"/>
             <relationships>

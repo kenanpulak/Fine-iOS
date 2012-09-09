@@ -17,6 +17,8 @@
 		8EFF4ED415FC16BF005D45F9 /* SearchItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4ED315FC16BF005D45F9 /* SearchItemTableViewController.m */; };
 		8EFF4EDA15FC1906005D45F9 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4ED915FC1906005D45F9 /* Product.m */; };
 		8EFF4EE115FC2E55005D45F9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4EE015FC2C27005D45F9 /* SecondViewController.m */; };
+		8EFF4EE415FC3871005D45F9 /* SearchItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4EE315FC3871005D45F9 /* SearchItemCell.m */; };
+		8EFF4EE615FC3CA0005D45F9 /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4EE515FC3CA0005D45F9 /* test.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		8EFF4ED915FC1906005D45F9 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = ../Product.m; sourceTree = "<group>"; };
 		8EFF4EDF15FC2C27005D45F9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		8EFF4EE015FC2C27005D45F9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		8EFF4EE215FC3871005D45F9 /* SearchItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItemCell.h; sourceTree = "<group>"; };
+		8EFF4EE315FC3871005D45F9 /* SearchItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemCell.m; sourceTree = "<group>"; };
+		8EFF4EE515FC3CA0005D45F9 /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = ../test.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,8 @@
 				8EFF4EDF15FC2C27005D45F9 /* SecondViewController.h */,
 				8EFF4EE015FC2C27005D45F9 /* SecondViewController.m */,
 				8EFF4EAF15FC0997005D45F9 /* MainStoryboard.storyboard */,
+				8EFF4EE215FC3871005D45F9 /* SearchItemCell.h */,
+				8EFF4EE315FC3871005D45F9 /* SearchItemCell.m */,
 				8EFF4ED215FC16BF005D45F9 /* SearchItemTableViewController.h */,
 				8EFF4ED315FC16BF005D45F9 /* SearchItemTableViewController.m */,
 				8EFF4ED815FC1906005D45F9 /* Product.h */,
@@ -100,6 +107,7 @@
 		8EFF4EA415FC0997005D45F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EFF4EE515FC3CA0005D45F9 /* test.png */,
 				8EFF4EA515FC0997005D45F9 /* Fine-Info.plist */,
 				8EFF4EA615FC0997005D45F9 /* InfoPlist.strings */,
 				8EFF4EA915FC0997005D45F9 /* main.m */,
@@ -161,6 +169,7 @@
 			files = (
 				8EFF4EA815FC0997005D45F9 /* InfoPlist.strings in Resources */,
 				8EFF4EB115FC0997005D45F9 /* MainStoryboard.storyboard in Resources */,
+				8EFF4EE615FC3CA0005D45F9 /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,7 @@
 				8EFF4ED415FC16BF005D45F9 /* SearchItemTableViewController.m in Sources */,
 				8EFF4EDA15FC1906005D45F9 /* Product.m in Sources */,
 				8EFF4EE115FC2E55005D45F9 /* SecondViewController.m in Sources */,
+				8EFF4EE415FC3871005D45F9 /* SearchItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

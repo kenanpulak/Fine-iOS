@@ -8,18 +8,21 @@
 
 #import "Product.h"
 
-#import "Product.h"
-
 @implementation Product
 
-@synthesize type, name;
+@synthesize type, name, imageName, restaurantName, price, numLikes;
 
 
-+ (id)productWithType:(NSString *)type name:(NSString *)name
++ (id)productWithType:(NSString *)type name:(NSString *)name imageName:(NSString *)imageName restaurantName:(NSString*)restaurantName price:(NSString*)price numLikes:(NSString*)numLikes
 {
 	Product *newProduct = [[self alloc] init];
 	newProduct.type = type;
 	newProduct.name = name;
+    newProduct.imageName = imageName;
+    newProduct.restaurantName = restaurantName;
+    newProduct.price = price;
+    newProduct.numLikes = numLikes;
+    
 	return newProduct;
 }
 

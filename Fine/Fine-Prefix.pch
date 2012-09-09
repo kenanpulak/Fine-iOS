@@ -12,3 +12,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define BARTO_PINK_COLOR [UIColor colorWithRed:242.0f/255.0f green:109.0f/255.0f blue:162.0f/255.0f alpha:1.0f]
+#define BARTO_CELL_COLOR [UIColor colorWithRed:190.0f/255.0f green:140.0f/255.0f blue:219.0f/255.0f alpha:1.0f]

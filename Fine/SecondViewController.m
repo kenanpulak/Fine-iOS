@@ -20,6 +20,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+   self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:242.0f/255.0f green:109.0f/255.0f blue:162.0f/255.0f alpha:1.0f];
+    self.navigationController.navigationBar.topItem.title = @"Barto";
+    
     self.enterStatus.delegate = self;
     
     imagePickerController = [[UIImagePickerController alloc] init];

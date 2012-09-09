@@ -11,10 +11,15 @@
 @interface Product : NSObject {
 	NSString *type;
 	NSString *name;
+    NSString *imageName;
+    NSString *restaurantName;
+    NSString *price;
+    NSString *numLikes;
+    
 }
 
-@property (nonatomic, copy) NSString *type, *name;
+@property (nonatomic, copy) NSString *type, *name, *imageName, *restaurantName, *price, *numLikes;
 
-+ (id)productWithType:(NSString *)type name:(NSString *)name;
++ (id)productWithType:(NSString *)type name:(NSString *)name imageName:(NSString *)imageName restaurantName:(NSString*)restaurantName price:(NSString*)price numLikes:(NSString*)numLikes;
 
 @end
