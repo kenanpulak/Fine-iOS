@@ -14,7 +14,7 @@
 @implementation SearchItemTableViewController
 @synthesize searchBar;
 
-@synthesize listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, selectedProduct;
+@synthesize listContent, filteredListContent, savedSearchTerm, savedScopeButtonIndex, searchWasActive, selectedProduct, realImageData;
 
 - (void)viewDidLoad
 {
@@ -30,15 +30,18 @@
     self.view.backgroundColor = BARTO_PINK_COLOR;
     
     listContent = [[NSArray alloc] initWithObjects:
-                   [Product productWithType:@"Salad" name:@"Chicken Caesar Salad" imageName:@"test" restaurantName:@"Cenan's Bakery" price:@"5.99" numLikes:@"22 Likes"],
-                   [Product productWithType:@"Burger" name:@"Cheese Burger" imageName:@"test" restaurantName:@"Five Guys" price:@"6.50" numLikes:@"32 Likes"],
-                   [Product productWithType:@"Pizza" name:@"Pepperoni Pizza" imageName:@"test" restaurantName:@"Extreme Pizza" price:@"12.99" numLikes:@"18 Likes"],
-                   [Product productWithType:@"Burrito" name:@"Super Burrito" imageName:@"test" restaurantName:@"Iron Cactus" price:@"6.80" numLikes:@"9 Likes"],
-                   [Product productWithType:@"Calzone" name:@"Cheese Calzone" imageName:@"test" restaurantName:@"Paizano's" price:@"6.29" numLikes:@"25 Likes"],
-                   [Product productWithType:@"Crepe" name:@"Nutella Crepe" imageName:@"test" restaurantName:@"Crepe Place" price:@"4.30" numLikes:@"52 Likes"],
-                   [Product productWithType:@"Taco" name:@"Doritos Loco Taco" imageName:@"test" restaurantName:@"Taco Bell" price:@"5.20" numLikes:@"82 Likes"],
-                   [Product productWithType:@"Pasta" name:@"Spaghetti w/ Vodka Sauce" imageName:@"test" restaurantName:@"Olive Garden" price:@"3.40" numLikes:@"33 Likes"],
-                   [Product productWithType:@"Bread" name:@"French Baguette" imageName:@"test" restaurantName:@"Baker's Place" price:@"2.00" numLikes:@"71 Likes"], nil];
+                   [Product productWithType:@"Salad" name:@"Chicken Caesar Salad" imageName:@"salad.jpeg" restaurantName:@"Cenan's Bakery" price:@"5.99" numLikes:@"22 Likes"],
+                   [Product productWithType:@"Burger" name:@"Cheese Burger" imageName:@"burger" restaurantName:@"Five Guys" price:@"6.50" numLikes:@"32 Likes"],
+                   [Product productWithType:@"Pizza" name:@"Pepperoni Pizza" imageName:@"pizza" restaurantName:@"Extreme Pizza" price:@"12.99" numLikes:@"18 Likes"],
+                   [Product productWithType:@"Burrito" name:@"Super Burrito" imageName:@"burrito.jpeg" restaurantName:@"Iron Cactus" price:@"6.80" numLikes:@"9 Likes"],
+                   [Product productWithType:@"Calzone" name:@"Cheese Calzone" imageName:@"calzone.jpeg" restaurantName:@"Paizano's" price:@"6.29" numLikes:@"25 Likes"],
+                   [Product productWithType:@"Crepe" name:@"Nutella Crepe" imageName:@"crepe.jpeg" restaurantName:@"Crepe Place" price:@"4.30" numLikes:@"52 Likes"],
+                   [Product productWithType:@"Taco" name:@"Doritos Loco Taco" imageName:@"taco" restaurantName:@"Taco Bell" price:@"5.20" numLikes:@"82 Likes"],
+                   [Product productWithType:@"Pasta" name:@"Spaghetti w/ Vodka Sauce" imageName:@"pasta.jpeg" restaurantName:@"Olive Garden" price:@"3.40" numLikes:@"33 Likes"],
+                   [Product productWithType:@"Bread" name:@"French Baguette" imageName:@"baguette.jpeg" restaurantName:@"Baker's Place" price:@"2.00" numLikes:@"71 Likes"], nil];
+    
+    self.realImageData = [[NSArray alloc] initWithObjects:@"burrito1.jpeg",@"Burrito2.jpeg",@"burrito3",@"burrito4.jpeg",@"burrito5.jpeg",@"burrito6.jpeg",@"burrito7.jpeg",@"burrito8.jpeg",@"burrito9.jpeg",@"burrito10",@"burrito11.jpeg",@"burrito12.jpeg",@"burrito13.jpeg",@"burrito14.jpeg",@"burrito15.jpeg", nil];
+    
 	
     realData = YES;
     
@@ -104,20 +107,23 @@
         price = product.price;
         numLikes = product.numLikes;
         image = [UIImage imageNamed:product.imageName];
+        
     }
     else{
         restaurantName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"place"];
         foodName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"foodName"];
         NSNumber *likesNum = [[NSNumber alloc] initWithInt:(arc4random_uniform(400)+30)];
-        price = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"foodPrice"];
-        numLikes = [likesNum stringValue];
+        price = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"price"];
+        numLikes = [[likesNum stringValue]stringByAppendingString:@" Likes"];
+        image = [UIImage imageNamed:[self.realImageData objectAtIndex:indexPath.row%15]];
+        
     }
 	
-	cell.foodName.text = product.name;
-    cell.restaurantName.text = product.restaurantName;
-    cell.price.text = product.price;
-    cell.numberLikes.text = product.numLikes;
-    cell.imageView.image = [UIImage imageNamed:product.imageName];
+	cell.foodName.text = foodName;
+    cell.restaurantName.text = restaurantName;
+    cell.price.text = price;
+    cell.numberLikes.text = numLikes;
+    cell.imageView.image = image;
     cell.contentView.backgroundColor = [UIColor whiteColor];
     
 	return cell;

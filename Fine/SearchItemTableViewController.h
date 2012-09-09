@@ -30,6 +30,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (nonatomic, retain) NSArray *listContent;
+@property (nonatomic, strong) NSArray *realImageData;
 @property (nonatomic, retain) NSMutableArray *filteredListContent;
 @property (nonatomic,strong) Product *selectedProduct;
 

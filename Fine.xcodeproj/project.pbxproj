@@ -133,6 +133,8 @@
 		8EFF4EA415FC0997005D45F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EFF4F2C15FC650A005D45F9 /* Burrito Images */,
+				8EFF4F1915FC61DD005D45F9 /* Dummy images */,
 				8EFF4EED15FC4B7E005D45F9 /* Utility Classes */,
 				8EFF4EEE15FC4D3F005D45F9 /* Images */,
 				8EFF4EA515FC0997005D45F9 /* Fine-Info.plist */,
@@ -162,8 +164,48 @@
 				8EFF4F0B15FC52D1005D45F9 /* pencil_icon.png */,
 				8EFF4F0C15FC52D1005D45F9 /* search_icon.png */,
 				8EFF4EE515FC3CA0005D45F9 /* test.png */,
+				8EFF4F1515FC6065005D45F9 /* Thumbs Up hand.jpeg */,
+				8EFF4F1715FC606E005D45F9 /* thumbs-down.jpeg */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		8EFF4F1915FC61DD005D45F9 /* Dummy images */ = {
+			isa = PBXGroup;
+			children = (
+				8EFF4F2A15FC6350005D45F9 /* baguette.jpeg */,
+				8EFF4F2815FC6323005D45F9 /* pasta.jpeg */,
+				8EFF4F2615FC62FA005D45F9 /* taco.png */,
+				8EFF4F2415FC62D2005D45F9 /* crepe.jpeg */,
+				8EFF4F2215FC62AB005D45F9 /* calzone.jpeg */,
+				8EFF4F2015FC627C005D45F9 /* burrito.jpeg */,
+				8EFF4F1A15FC620A005D45F9 /* salad.jpeg */,
+				8EFF4F1C15FC6225005D45F9 /* burger.png */,
+				8EFF4F1E15FC625F005D45F9 /* pizza.png */,
+			);
+			name = "Dummy images";
+			sourceTree = "<group>";
+		};
+		8EFF4F2C15FC650A005D45F9 /* Burrito Images */ = {
+			isa = PBXGroup;
+			children = (
+				8EFF4F4915FC66F2005D45F9 /* burrito15.jpeg */,
+				8EFF4F4715FC66EE005D45F9 /* burrito14.jpeg */,
+				8EFF4F4515FC66E9005D45F9 /* burrito13.jpeg */,
+				8EFF4F4315FC66E3005D45F9 /* burrito12.jpeg */,
+				8EFF4F4115FC66DD005D45F9 /* burrito11.jpeg */,
+				8EFF4F3F15FC66D9005D45F9 /* burrito10.png */,
+				8EFF4F3D15FC66D4005D45F9 /* burrito9.jpeg */,
+				8EFF4F3B15FC65F9005D45F9 /* burrito8.jpeg */,
+				8EFF4F3915FC65F4005D45F9 /* burrito7.jpeg */,
+				8EFF4F3715FC65BF005D45F9 /* burrito6.jpeg */,
+				8EFF4F3515FC65BA005D45F9 /* burrito5.jpeg */,
+				8EFF4F3315FC65B5005D45F9 /* burrito4.jpeg */,
+				8EFF4F3115FC65B0005D45F9 /* burrito3.png */,
+				8EFF4F2F15FC65AA005D45F9 /* Burrito2.jpeg */,
+				8EFF4F2D15FC65A5005D45F9 /* burrito1.jpeg */,
+			);
+			name = "Burrito Images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +266,32 @@
 				8EFF4F0E15FC52D1005D45F9 /* search_icon.png in Resources */,
 				8EFF4F1015FC55FA005D45F9 /* bartoIcon_57px.png in Resources */,
 				8EFF4F1215FC57D5005D45F9 /* bartoIcon_114px.png in Resources */,
+				8EFF4F1615FC6065005D45F9 /* Thumbs Up hand.jpeg in Resources */,
+				8EFF4F1815FC606E005D45F9 /* thumbs-down.jpeg in Resources */,
+				8EFF4F1B15FC620A005D45F9 /* salad.jpeg in Resources */,
+				8EFF4F1D15FC6225005D45F9 /* burger.png in Resources */,
+				8EFF4F1F15FC625F005D45F9 /* pizza.png in Resources */,
+				8EFF4F2115FC627C005D45F9 /* burrito.jpeg in Resources */,
+				8EFF4F2315FC62AB005D45F9 /* calzone.jpeg in Resources */,
+				8EFF4F2515FC62D2005D45F9 /* crepe.jpeg in Resources */,
+				8EFF4F2715FC62FA005D45F9 /* taco.png in Resources */,
+				8EFF4F2915FC6323005D45F9 /* pasta.jpeg in Resources */,
+				8EFF4F2B15FC6350005D45F9 /* baguette.jpeg in Resources */,
+				8EFF4F2E15FC65A5005D45F9 /* burrito1.jpeg in Resources */,
+				8EFF4F3015FC65AA005D45F9 /* Burrito2.jpeg in Resources */,
+				8EFF4F3215FC65B0005D45F9 /* burrito3.png in Resources */,
+				8EFF4F3415FC65B5005D45F9 /* burrito4.jpeg in Resources */,
+				8EFF4F3615FC65BA005D45F9 /* burrito5.jpeg in Resources */,
+				8EFF4F3815FC65BF005D45F9 /* burrito6.jpeg in Resources */,
+				8EFF4F3A15FC65F4005D45F9 /* burrito7.jpeg in Resources */,
+				8EFF4F3C15FC65F9005D45F9 /* burrito8.jpeg in Resources */,
+				8EFF4F3E15FC66D4005D45F9 /* burrito9.jpeg in Resources */,
+				8EFF4F4015FC66D9005D45F9 /* burrito10.png in Resources */,
+				8EFF4F4215FC66DD005D45F9 /* burrito11.jpeg in Resources */,
+				8EFF4F4415FC66E3005D45F9 /* burrito12.jpeg in Resources */,
+				8EFF4F4615FC66E9005D45F9 /* burrito13.jpeg in Resources */,
+				8EFF4F4815FC66EE005D45F9 /* burrito14.jpeg in Resources */,
+				8EFF4F4A15FC66F2005D45F9 /* burrito15.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
