@@ -109,7 +109,7 @@
         restaurantName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"place"];
         foodName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"foodName"];
         NSNumber *likesNum = [[NSNumber alloc] initWithInt:(arc4random_uniform(400)+30)];
-        price = [priceNum stringValue];
+        price = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"price"];
         numLikes = [[likesNum stringValue]stringByAppendingString:@" Likes"];
         
     }
