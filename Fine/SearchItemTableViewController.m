@@ -113,14 +113,12 @@
         numLikes = [likesNum stringValue];
     }
 	
-    
-
-	cell.foodName.text = foodName;
-    cell.restaurantName.text = restaurantName;
-    cell.price.text = price;
-    cell.numberLikes.text = numLikes;
-    cell.imageView.image = image;
-    cell.contentView.backgroundColor = BARTO_CELL_COLOR;
+	cell.foodName.text = product.name;
+    cell.restaurantName.text = product.restaurantName;
+    cell.price.text = product.price;
+    cell.numberLikes.text = product.numLikes;
+    cell.imageView.image = [UIImage imageNamed:product.imageName];
+    cell.contentView.backgroundColor = [UIColor whiteColor];
     
 	return cell;
 }

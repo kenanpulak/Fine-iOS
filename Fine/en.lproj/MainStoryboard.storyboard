@@ -287,7 +287,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niZ-A0-0Rz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="dGH-hS-TVb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="Ock-Rs-fvR"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search_icon.png" id="Ock-Rs-fvR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Can-LY-4bB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -301,12 +301,12 @@
             </objects>
             <point key="canvasLocation" x="635" y="-161"/>
         </scene>
-        <!--Navigation Controller - Second-->
+        <!--Navigation Controller - Review-->
         <scene sceneID="Qyb-Yo-goB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkV-g0-ucs" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="ilg-qF-n6e" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" id="AYD-Hs-AJV"/>
+                    <tabBarItem key="tabBarItem" title="Review" image="pencil_icon.png" id="AYD-Hs-AJV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MXn-oA-ney">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -321,6 +321,50 @@
             <point key="canvasLocation" x="639" y="521"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil_icon.png" width="24" height="24"/>
+        <image name="search_icon.png" width="24" height="24"/>
+    </resources>
+    <classes>
+        <class className="SearchItemCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="foodName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="numberLikes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SearchItemTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="SecondViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneButtonPressed:"/>
+                <relationship kind="action" name="downButtonPressed:"/>
+                <relationship kind="action" name="takePhotoButtonPressed:"/>
+                <relationship kind="action" name="upButtonPressed:"/>
+                <relationship kind="outlet" name="downButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="enterStatus" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="upButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="detailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/detailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="numLikes" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
