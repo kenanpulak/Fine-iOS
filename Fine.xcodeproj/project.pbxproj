@@ -25,6 +25,8 @@
 		8EFF4F0E15FC52D1005D45F9 /* search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F0C15FC52D1005D45F9 /* search_icon.png */; };
 		8EFF4F1015FC55FA005D45F9 /* bartoIcon_57px.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F0F15FC55FA005D45F9 /* bartoIcon_57px.png */; };
 		8EFF4F1215FC57D5005D45F9 /* bartoIcon_114px.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F1115FC57D5005D45F9 /* bartoIcon_114px.png */; };
+		8EFF4F1615FC6065005D45F9 /* Thumbs Up hand.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F1515FC6065005D45F9 /* Thumbs Up hand.jpeg */; };
+		8EFF4F1815FC606E005D45F9 /* thumbs-down.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F1715FC606E005D45F9 /* thumbs-down.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		8EFF4F0C15FC52D1005D45F9 /* search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_icon.png; sourceTree = "<group>"; };
 		8EFF4F0F15FC55FA005D45F9 /* bartoIcon_57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bartoIcon_57px.png; path = ../bartoIcon_57px.png; sourceTree = "<group>"; };
 		8EFF4F1115FC57D5005D45F9 /* bartoIcon_114px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bartoIcon_114px.png; path = ../bartoIcon_114px.png; sourceTree = "<group>"; };
+		8EFF4F1515FC6065005D45F9 /* Thumbs Up hand.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Thumbs Up hand.jpeg"; sourceTree = "<group>"; };
+		8EFF4F1715FC606E005D45F9 /* thumbs-down.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "thumbs-down.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 				8EFF4F0B15FC52D1005D45F9 /* pencil_icon.png */,
 				8EFF4F0C15FC52D1005D45F9 /* search_icon.png */,
 				8EFF4EE515FC3CA0005D45F9 /* test.png */,
+				8EFF4F1515FC6065005D45F9 /* Thumbs Up hand.jpeg */,
+				8EFF4F1715FC606E005D45F9 /* thumbs-down.jpeg */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -212,6 +218,8 @@
 				8EFF4F0E15FC52D1005D45F9 /* search_icon.png in Resources */,
 				8EFF4F1015FC55FA005D45F9 /* bartoIcon_57px.png in Resources */,
 				8EFF4F1215FC57D5005D45F9 /* bartoIcon_114px.png in Resources */,
+				8EFF4F1615FC6065005D45F9 /* Thumbs Up hand.jpeg in Resources */,
+				8EFF4F1815FC606E005D45F9 /* thumbs-down.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
