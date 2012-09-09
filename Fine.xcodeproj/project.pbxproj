@@ -16,6 +16,7 @@
 		8EFF4EB115FC0997005D45F9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4EAF15FC0997005D45F9 /* MainStoryboard.storyboard */; };
 		8EFF4ED415FC16BF005D45F9 /* SearchItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4ED315FC16BF005D45F9 /* SearchItemTableViewController.m */; };
 		8EFF4EDA15FC1906005D45F9 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4ED915FC1906005D45F9 /* Product.m */; };
+		8EFF4EE115FC2E55005D45F9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF4EE015FC2C27005D45F9 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		8EFF4ED315FC16BF005D45F9 /* SearchItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItemTableViewController.m; sourceTree = "<group>"; };
 		8EFF4ED815FC1906005D45F9 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Product.h; path = ../Product.h; sourceTree = "<group>"; };
 		8EFF4ED915FC1906005D45F9 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Product.m; path = ../Product.m; sourceTree = "<group>"; };
+		8EFF4EDF15FC2C27005D45F9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		8EFF4EE015FC2C27005D45F9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 			children = (
 				8EFF4EAC15FC0997005D45F9 /* AppDelegate.h */,
 				8EFF4EAD15FC0997005D45F9 /* AppDelegate.m */,
+				8EFF4EDF15FC2C27005D45F9 /* SecondViewController.h */,
+				8EFF4EE015FC2C27005D45F9 /* SecondViewController.m */,
 				8EFF4EAF15FC0997005D45F9 /* MainStoryboard.storyboard */,
 				8EFF4ED215FC16BF005D45F9 /* SearchItemTableViewController.h */,
 				8EFF4ED315FC16BF005D45F9 /* SearchItemTableViewController.m */,
@@ -170,6 +175,7 @@
 				8EFF4EAE15FC0997005D45F9 /* AppDelegate.m in Sources */,
 				8EFF4ED415FC16BF005D45F9 /* SearchItemTableViewController.m in Sources */,
 				8EFF4EDA15FC1906005D45F9 /* Product.m in Sources */,
+				8EFF4EE115FC2E55005D45F9 /* SecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
