@@ -25,6 +25,9 @@
 		8EFF4F0E15FC52D1005D45F9 /* search_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F0C15FC52D1005D45F9 /* search_icon.png */; };
 		8EFF4F1015FC55FA005D45F9 /* bartoIcon_57px.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F0F15FC55FA005D45F9 /* bartoIcon_57px.png */; };
 		8EFF4F1215FC57D5005D45F9 /* bartoIcon_114px.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F1115FC57D5005D45F9 /* bartoIcon_114px.png */; };
+		9C5915C715FC645300BEAAD4 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5915C615FC645300BEAAD4 /* DropboxSDK.framework */; };
+		9C5915CA15FC649300BEAAD4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5915C915FC649300BEAAD4 /* Security.framework */; };
+		9C5915CC15FC64A100BEAAD4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5915CB15FC64A100BEAAD4 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		8EFF4F0C15FC52D1005D45F9 /* search_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_icon.png; sourceTree = "<group>"; };
 		8EFF4F0F15FC55FA005D45F9 /* bartoIcon_57px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bartoIcon_57px.png; path = ../bartoIcon_57px.png; sourceTree = "<group>"; };
 		8EFF4F1115FC57D5005D45F9 /* bartoIcon_114px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bartoIcon_114px.png; path = ../bartoIcon_114px.png; sourceTree = "<group>"; };
+		9C5915C615FC645300BEAAD4 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = Fine/DropboxSDK.framework; sourceTree = "<group>"; };
+		9C5915C915FC649300BEAAD4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9C5915CB15FC64A100BEAAD4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,9 +69,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5915CC15FC64A100BEAAD4 /* QuartzCore.framework in Frameworks */,
+				9C5915CA15FC649300BEAAD4 /* Security.framework in Frameworks */,
 				8EFF4E9E15FC0997005D45F9 /* UIKit.framework in Frameworks */,
 				8EFF4EA015FC0997005D45F9 /* Foundation.framework in Frameworks */,
 				8EFF4EA215FC0997005D45F9 /* CoreGraphics.framework in Frameworks */,
+				9C5915C715FC645300BEAAD4 /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +84,8 @@
 		8EFF4E8E15FC0997005D45F9 = {
 			isa = PBXGroup;
 			children = (
+				9C5915CB15FC64A100BEAAD4 /* QuartzCore.framework */,
+				9C5915C915FC649300BEAAD4 /* Security.framework */,
 				8EFF4EA315FC0997005D45F9 /* Fine */,
 				8EFF4E9C15FC0997005D45F9 /* Frameworks */,
 				8EFF4E9A15FC0997005D45F9 /* Products */,
@@ -92,6 +103,7 @@
 		8EFF4E9C15FC0997005D45F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C5915C615FC645300BEAAD4 /* DropboxSDK.framework */,
 				8EFF4E9D15FC0997005D45F9 /* UIKit.framework */,
 				8EFF4E9F15FC0997005D45F9 /* Foundation.framework */,
 				8EFF4EA115FC0997005D45F9 /* CoreGraphics.framework */,
@@ -307,6 +319,10 @@
 		8EFF4EC315FC0997005D45F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Fine\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fine/Fine-Prefix.pch";
 				INFOPLIST_FILE = "Fine/Fine-Info.plist";
@@ -318,6 +334,10 @@
 		8EFF4EC415FC0997005D45F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Fine\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fine/Fine-Prefix.pch";
 				INFOPLIST_FILE = "Fine/Fine-Info.plist";

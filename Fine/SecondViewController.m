@@ -10,6 +10,7 @@
 
 
 @implementation SecondViewController
+@synthesize savePhoto;
 
 @synthesize enterStatus;
 @synthesize imageView;
@@ -32,6 +33,7 @@
 
 - (void)viewDidUnload
 {
+    [self setSavePhoto:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -73,6 +75,21 @@
     
 }
 
+-(IBAction)saveButtonPressed:(id)sender{
+    
+    if (![[DBSession sharedSession] isLinked]) {
+        [[DBSession sharedSession] linkFromController:self];
+    }
+    
+    NSString *localPath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSString *filename = @"Info.plist";
+    NSString *destDir = @"/";
+    [[self restClient] uploadFile:filename toPath:destDir
+                    withParentRev:nil fromPath:localPath];
+    
+    
+}
+
 
 
 -(IBAction)takePhotoButtonPressed:(id)sender
@@ -97,6 +114,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
     
     [picker dismissModalViewControllerAnimated:YES];
+}
+
+- (DBRestClient *)restClient {
+    if (!restClient) {
+        restClient =
+        [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+        restClient.delegate = self;
+    }
+    return restClient;
 }
 
 
