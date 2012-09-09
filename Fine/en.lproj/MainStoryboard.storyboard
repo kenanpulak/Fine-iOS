@@ -36,9 +36,9 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" id="jmu-8O-6ud">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             <connections>
-                                <outlet property="delegate" destination="JIl-7g-YPN" id="NSX-Kt-qdN"/>
+                                <outlet property="delegate" destination="rmJ-Bh-Sa0" id="Vj6-33-v75"/>
                             </connections>
                         </searchBar>
                         <prototypes>
@@ -109,19 +109,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="M5U-Z5-uSm"/>
                     <connections>
-                        <outlet property="searchBar" destination="jmu-8O-6ud" id="a2J-e1-1at"/>
-                        <outlet property="searchDisplayController" destination="JIl-7g-YPN" id="lIt-HM-VGn"/>
+                        <outlet property="searchBar" destination="jmu-8O-6ud" id="6x6-ys-cbe"/>
                     </connections>
                 </tableViewController>
-                <searchDisplayController id="JIl-7g-YPN">
-                    <connections>
-                        <outlet property="delegate" destination="rmJ-Bh-Sa0" id="ztJ-NQ-lAI"/>
-                        <outlet property="searchBar" destination="jmu-8O-6ud" id="RQl-vd-JqA"/>
-                        <outlet property="searchContentsController" destination="rmJ-Bh-Sa0" id="YM5-RB-RbC"/>
-                        <outlet property="searchResultsDataSource" destination="rmJ-Bh-Sa0" id="eVn-fy-9fj"/>
-                        <outlet property="searchResultsDelegate" destination="rmJ-Bh-Sa0" id="PEV-Wb-ELY"/>
-                    </connections>
-                </searchDisplayController>
+                <searchDisplayController id="JIl-7g-YPN"/>
             </objects>
             <point key="canvasLocation" x="1175" y="-161"/>
         </scene>
@@ -330,46 +321,6 @@
             <point key="canvasLocation" x="639" y="521"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="SearchItemCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="foodName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="numberLikes" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SearchItemTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="action" name="downButtonPressed:"/>
-                <relationship kind="action" name="takePhotoButtonPressed:"/>
-                <relationship kind="action" name="upButtonPressed:"/>
-                <relationship kind="outlet" name="downButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="enterStatus" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="upButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="detailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/detailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="numLikes" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

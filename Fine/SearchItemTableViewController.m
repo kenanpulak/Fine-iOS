@@ -23,6 +23,7 @@
     self.navigationController.navigationBar.tintColor = BARTO_PINK_COLOR;
     
     self.searchBar.tintColor = BARTO_PINK_COLOR;
+    self.searchBar.delegate = self;
     
     self.navigationController.navigationBar.topItem.title = @"Barto";
     
@@ -38,24 +39,11 @@
                    [Product productWithType:@"Taco" name:@"Doritos Loco Taco" imageName:@"test" restaurantName:@"Taco Bell" price:@"5.20" numLikes:@"82 Likes"],
                    [Product productWithType:@"Pasta" name:@"Spaghetti w/ Vodka Sauce" imageName:@"test" restaurantName:@"Olive Garden" price:@"3.40" numLikes:@"33 Likes"],
                    [Product productWithType:@"Bread" name:@"French Baguette" imageName:@"test" restaurantName:@"Baker's Place" price:@"2.00" numLikes:@"71 Likes"], nil];
-    
-    // create a filtered list that will contain products for the search results table.
-	self.filteredListContent = [NSMutableArray arrayWithCapacity:[self.listContent count]];
 	
-	// restore search settings if they were saved in didReceiveMemoryWarning.
-    if (self.savedSearchTerm)
-	{
-        [self.searchDisplayController setActive:self.searchWasActive];
-        [self.searchDisplayController.searchBar setSelectedScopeButtonIndex:self.savedScopeButtonIndex];
-        [self.searchDisplayController.searchBar setText:savedSearchTerm];
-        
-        self.savedSearchTerm = nil;
-    }
-	
-	[self.tableView reloadData];
-	self.tableView.scrollEnabled = YES;
+    realData = YES;
     
-    self.searchBar.delegate = self;
+    [self.tableView reloadData];
+    self.tableView.scrollEnabled = YES;
     
 }
 
@@ -80,13 +68,11 @@
 	 If the requesting table view is the search display controller's table view, return the count of
      the filtered list, otherwise return the count of the main list.
 	 */
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        return [self.filteredListContent count];
-    }
-	else
-	{
+	if(realData){
         return [self.listContent count];
+    }
+    else{
+        return [realDataArray count];
     }
 }
 
@@ -103,26 +89,40 @@
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
     
-	
-	/*
-	 If the requesting table view is the search display controller's table view, configure the cell using the filtered content, otherwise use the main list.
-	 */
-	Product *product = nil;
-	if (tableView == self.searchDisplayController.searchResultsTableView)
-	{
-        product = [self.filteredListContent objectAtIndex:indexPath.row];
-    }
-	else
-	{
-        product = [self.listContent objectAtIndex:indexPath.row];
-    }
+    NSString *restaurantName;
+    NSString *foodName;
+    NSString *numLikes;
+    NSString *price;
+    UIImage *image;
     
+    
+    Product *product = nil;
+    if(realData){
+        product = [self.listContent objectAtIndex:indexPath.row];
+        restaurantName = product.restaurantName;
+        foodName = product.name;
+        price = product.price;
+        numLikes = product.numLikes;
+        image = [UIImage imageNamed:product.imageName];
+    }
+    else{
+        
+        restaurantName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"place"];
+        foodName = [[realDataArray objectAtIndex:indexPath.row] objectForKey:@"foodName"];
+        NSNumber *priceNum = [[NSNumber alloc] initWithInt:(arc4random_uniform(7)+5)];
+        NSNumber *likesNum = [[NSNumber alloc] initWithInt:(arc4random_uniform(400)+30)];
+        price = [priceNum stringValue];
+        numLikes = [likesNum stringValue];
+        
+    }
 	
-	cell.foodName.text = product.name;
-    cell.restaurantName.text = product.restaurantName;
-    cell.price.text = product.price;
-    cell.numberLikes.text = product.numLikes;
-    cell.imageView.image = [UIImage imageNamed:product.imageName];
+    
+
+	cell.foodName.text = foodName;
+    cell.restaurantName.text = restaurantName;
+    cell.price.text = price;
+    cell.numberLikes.text = numLikes;
+    cell.imageView.image = image;
     cell.contentView.backgroundColor = BARTO_CELL_COLOR;
     
 	return cell;
@@ -133,7 +133,7 @@
 {
 	/*
 	 If the requesting table view is the search display controller's table view, configure the next view controller using the filtered content, otherwise use the main list.
-	 */
+	 
 	Product *product = nil;
 	if (tableView == self.searchDisplayController.searchResultsTableView)
 	{
@@ -146,66 +146,10 @@
     
     self.selectedProduct = product;
     
-    
+    */
     
     // [[self navigationController] pushViewController:detailsViewController animated:YES];
 }
-
-
-#pragma mark -
-#pragma mark Content Filtering
-/*
- - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
- {
- 
- 
- [self.filteredListContent removeAllObjects]; // First clear the filtered array.
- 
- for (Product *product in listContent)
- {
- if ([scope isEqualToString:@"All"] || [product.type isEqualToString:scope])
- {
- NSComparisonResult result = [product.name compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
- if (result == NSOrderedSame)
- {
- [self.filteredListContent addObject:product];
- }
- }
- }
- }
- 
- #pragma mark UISearchDisplayController Delegate Methods
- 
- - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
- {
- 
- if ([searchString isEqualToString:@"\n"] ) {
- 
- NSLog(@"searchString %@",searchString);
- 
- }
- NSLog(@"searchString %@",searchString);
- 
- 
- [self filterContentForSearchText:searchString scope:
- [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
- 
- // Return YES to cause the search result table view to be reloaded.
- 
- return YES;
- }
- 
- 
- - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
- {
- 
- [self filterContentForSearchText:[self.searchDisplayController.searchBar text] scope:
- [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
- 
- // Return YES to cause the search result table view to be reloaded.
- return YES;
- }
- */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -230,6 +174,11 @@
     }
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    
+    [self.searchBar resignFirstResponder];
+}
+
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
     
     NSString *searchString = self.searchBar.text;
@@ -250,6 +199,7 @@
     
     NSArray *restaurantsInfo = [searchFood.json objectForKey:@"objects"];
     NSDictionary *restaurant;
+    realDataArray = [[NSMutableArray alloc] init];
     
     for(restaurant in restaurantsInfo){
         
@@ -258,7 +208,19 @@
         
         NSLog(@"name:%@",foodName);
         NSLog(@"place:%@",place);
+        
+        NSMutableDictionary *realFoodItem = [[NSMutableDictionary alloc] init];
+        
+        [realFoodItem setObject:foodName forKey:@"foodName"];
+        [realFoodItem setObject:place forKey:@"place"];
+        
+        [realDataArray addObject:realFoodItem];
     }
+    
+    realData = NO;
+    [self.tableView reloadData];
+    
+    
 }
 
 

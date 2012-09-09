@@ -10,10 +10,9 @@
 #import "ServerRequest.h"
 #import "Product.h"
 
-@interface SearchItemTableViewController : UITableViewController <UISearchDisplayDelegate, UISearchBarDelegate,ServerRequestDelegate>{
+@interface SearchItemTableViewController : UITableViewController <UISearchBarDelegate,ServerRequestDelegate>{
     
     NSArray			*listContent;			// The main content of app
-	NSMutableArray	*filteredListContent;	// The content filtered as a result of a search
 	
 	// The saved state of the search UI if a memory warning removed the view.
     NSString		*savedSearchTerm;
@@ -21,6 +20,10 @@
     BOOL			searchWasActive;
     
     ServerRequest *searchFood;
+    
+    bool realData;
+    
+    NSMutableArray *realDataArray;
     
     
 }
