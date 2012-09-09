@@ -51,6 +51,9 @@
 		8EFF4F4615FC66E9005D45F9 /* burrito13.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F4515FC66E9005D45F9 /* burrito13.jpeg */; };
 		8EFF4F4815FC66EE005D45F9 /* burrito14.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F4715FC66EE005D45F9 /* burrito14.jpeg */; };
 		8EFF4F4A15FC66F2005D45F9 /* burrito15.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F4915FC66F2005D45F9 /* burrito15.jpeg */; };
+		8EFF4F5015FC6CB9005D45F9 /* bartoDoneButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F4F15FC6CB9005D45F9 /* bartoDoneButton.png */; };
+		8EFF4F5315FC6E40005D45F9 /* bartoDropboxButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F5215FC6E40005D45F9 /* bartoDropboxButton.png */; };
+		8EFF4F5515FC6E44005D45F9 /* bartoTakePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EFF4F5415FC6E44005D45F9 /* bartoTakePhoto.png */; };
 		9C5915C715FC645300BEAAD4 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5915C615FC645300BEAAD4 /* DropboxSDK.framework */; };
 		9C5915CA15FC649300BEAAD4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5915C915FC649300BEAAD4 /* Security.framework */; };
 		9C5915CC15FC64A100BEAAD4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5915CB15FC64A100BEAAD4 /* QuartzCore.framework */; };
@@ -111,6 +114,9 @@
 		8EFF4F4515FC66E9005D45F9 /* burrito13.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burrito13.jpeg; sourceTree = "<group>"; };
 		8EFF4F4715FC66EE005D45F9 /* burrito14.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burrito14.jpeg; sourceTree = "<group>"; };
 		8EFF4F4915FC66F2005D45F9 /* burrito15.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burrito15.jpeg; sourceTree = "<group>"; };
+		8EFF4F4F15FC6CB9005D45F9 /* bartoDoneButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bartoDoneButton.png; sourceTree = "<group>"; };
+		8EFF4F5215FC6E40005D45F9 /* bartoDropboxButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bartoDropboxButton.png; sourceTree = "<group>"; };
+		8EFF4F5415FC6E44005D45F9 /* bartoTakePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bartoTakePhoto.png; sourceTree = "<group>"; };
 		9C5915C615FC645300BEAAD4 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = Fine/DropboxSDK.framework; sourceTree = "<group>"; };
 		9C5915C915FC649300BEAAD4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9C5915CB15FC64A100BEAAD4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -211,6 +217,9 @@
 		8EFF4EEE15FC4D3F005D45F9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8EFF4F5415FC6E44005D45F9 /* bartoTakePhoto.png */,
+				8EFF4F5215FC6E40005D45F9 /* bartoDropboxButton.png */,
+				8EFF4F4F15FC6CB9005D45F9 /* bartoDoneButton.png */,
 				8EFF4F1115FC57D5005D45F9 /* bartoIcon_114px.png */,
 				8EFF4F0F15FC55FA005D45F9 /* bartoIcon_57px.png */,
 				8EFF4F0B15FC52D1005D45F9 /* pencil_icon.png */,
@@ -344,6 +353,9 @@
 				8EFF4F4615FC66E9005D45F9 /* burrito13.jpeg in Resources */,
 				8EFF4F4815FC66EE005D45F9 /* burrito14.jpeg in Resources */,
 				8EFF4F4A15FC66F2005D45F9 /* burrito15.jpeg in Resources */,
+				8EFF4F5015FC6CB9005D45F9 /* bartoDoneButton.png in Resources */,
+				8EFF4F5315FC6E40005D45F9 /* bartoDropboxButton.png in Resources */,
+				8EFF4F5515FC6E44005D45F9 /* bartoTakePhoto.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -195,14 +195,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="YOl-0a-t5o">
-                                <rect key="frame" x="40" y="86" width="108" height="58"/>
+                                <rect key="frame" x="34" y="0.0" width="253" height="121"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y6K-fN-eNN">
-                                <rect key="frame" x="20" y="25" width="280" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Y6K-fN-eNN">
+                                <rect key="frame" x="20" y="129" width="118" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Take Photo">
+                                <state key="normal" backgroundImage="bartoTakePhoto.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -214,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Qb-2m-tZY">
-                                <rect key="frame" x="84" y="234" width="37" height="37"/>
+                                <rect key="frame" x="86" y="260" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="Thumbs Up hand.jpeg">
@@ -229,7 +229,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pqe-FM-xGH">
-                                <rect key="frame" x="191" y="234" width="38" height="37"/>
+                                <rect key="frame" x="189" y="260" width="38" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="thumbs-down.jpeg">
@@ -243,11 +243,11 @@
                                     <action selector="downButtonPressed:" destination="Jzg-MY-Cgp" eventType="touchUpInside" id="tlN-hz-oIY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DTU-yx-xxZ">
-                                <rect key="frame" x="20" y="300" width="280" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DTU-yx-xxZ">
+                                <rect key="frame" x="20" y="311" width="280" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Done">
+                                <state key="normal" backgroundImage="bartoDoneButton.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -259,7 +259,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9s1-vu-gY0">
-                                <rect key="frame" x="40" y="156" width="240" height="56"/>
+                                <rect key="frame" x="40" y="190" width="240" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -268,11 +268,11 @@
                                     <outlet property="delegate" destination="1SA-Ao-hPR" id="tn1-5P-ABE"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="idp-GU-3Ph">
-                                <rect key="frame" x="165" y="94" width="135" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="idp-GU-3Ph">
+                                <rect key="frame" x="146" y="129" width="167" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Save to Dropbox">
+                                <state key="normal" backgroundImage="bartoDropboxButton.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -339,52 +339,13 @@
     </scenes>
     <resources>
         <image name="Thumbs Up hand.jpeg" width="259" height="194"/>
+        <image name="bartoDoneButton.png" width="280" height="47"/>
+        <image name="bartoDropboxButton.png" width="167" height="47"/>
+        <image name="bartoTakePhoto.png" width="118" height="47"/>
         <image name="pencil_icon.png" width="24" height="24"/>
         <image name="search_icon.png" width="24" height="24"/>
         <image name="thumbs-down.jpeg" width="1280" height="1024"/>
     </resources>
-    <classes>
-        <class className="SearchItemCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="foodName" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="numberLikes" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SearchItemTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchItemTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="SecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneButtonPressed:"/>
-                <relationship kind="action" name="downButtonPressed:"/>
-                <relationship kind="action" name="saveButtonPressed:"/>
-                <relationship kind="action" name="takePhotoButtonPressed:"/>
-                <relationship kind="action" name="upButtonPressed:"/>
-                <relationship kind="outlet" name="downButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="enterStatus" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="savePhoto" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="upButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="detailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/detailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="numLikes" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="price" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="restaurantName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

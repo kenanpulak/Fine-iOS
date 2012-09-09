@@ -26,6 +26,12 @@
     
     self.enterStatus.delegate = self;
     
+    [[self.upButton layer] setBorderWidth:2.0f];
+    [[self.upButton layer] setBorderColor:[UIColor blackColor].CGColor];
+    
+    [[self.downButton layer] setBorderWidth:2.0f];
+    [[self.downButton layer] setBorderColor:[UIColor blackColor].CGColor];
+    
     imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = self;
     imagePickerController.sourceType=UIImagePickerControllerSourceTypeCamera;
